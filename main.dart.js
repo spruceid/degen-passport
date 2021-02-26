@@ -1,0 +1,1 @@
+../credible/build/web/main.dart.js

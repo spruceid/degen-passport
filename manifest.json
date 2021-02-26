@@ -1,0 +1,55 @@
+{
+  "name": "DeFi Passport",
+  "version": "0.1.0",
+  "description": "",
+  "background": {
+    "service_worker": "sw.js"
+  },
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "images/ic-credible-16.png"
+  },
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "externally_connectable": {
+    "matches": [
+      "https://*.theosirian.com/*",
+      "https://w4ll3.github.io/*"
+    ]
+  },
+  "permissions": [
+    "declarativeContent",
+    "clipboardWrite",
+    "clipboardRead",
+    "contextMenus",
+    "storage",
+    "tabs"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/*",
+        "didkit/*",
+        "icons/*",
+        "images/*",
+        "vendor/*",
+        "favicon.png",
+        "manifest.json",
+        "index.html",
+        "get.html",
+        "get.js",
+        "store.html",
+        "store.js",
+        "main.dart.js"
+      ],
+      "matches": []
+    }
+  ],
+  "icons": {
+    "16": "images/ic-credible-16.png",
+    "24": "images/ic-credible-24.png",
+    "48": "images/ic-credible-48.png"
+  },
+  "manifest_version": 3
+}
