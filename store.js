@@ -1,1 +1,0 @@
-../credible/build/web/store.js

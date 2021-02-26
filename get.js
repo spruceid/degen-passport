@@ -1,1 +1,0 @@
-../credible/build/web/get.js

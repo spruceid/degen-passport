@@ -1,1 +1,0 @@
-../credible/build/web/flutter_service_worker.js
