@@ -38,7 +38,7 @@ But if you want to build it by yourself, follow these steps:
 - [Clone Skia repository and pull its dependencies](https://skia.org/user/download)
 
 ```bash
-git clone https://skia.googlesource.com/skia.git
+git clone https://skia.googlesource.com/skia.git --depth 1 --branch canvaskit/0.22.0
 cd skia
 python2 tools/git-sync-deps
 ```
