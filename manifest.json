@@ -14,8 +14,8 @@
   ],
   "externally_connectable": {
     "matches": [
-      "https://*.theosirian.com/*",
-      "https://w4ll3.github.io/*"
+      "*://localhost:*/*",
+      "https://*.spruceid.com/*"
     ]
   },
   "permissions": [
