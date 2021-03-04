@@ -34,24 +34,26 @@ chrome.runtime.onMessageExternal.addListener((request, sender, callback) => {
 
 /// RESPONDER
 chrome.runtime.onConnect.addListener((port) => {
-  const tabId = port.sender.tab.id;
+  if(port.sender.tab) {
+    const tabId = port.sender.tab.id;
 
-  const timeout = setTimeout(() => port.disconnect(), 30000);
+    const timeout = setTimeout(() => port.disconnect(), 30000);
 
-  port.onDisconnect.addListener((_) => {
-    clearTimeout(timeout);
-    clients[tabId](null);
-    clients.delete(tabId);
-    port.disconnect();
-  });
+    port.onDisconnect.addListener((_) => {
+      clearTimeout(timeout);
+      clients[tabId](null);
+      clients.delete(tabId);
+      port.disconnect();
+    });
 
-  port.onMessage.addListener((e) => {
-    clearTimeout(timeout);
-    clients[tabId](e);
-    clients.delete(tabId);
-    port.disconnect();
-  });
+    port.onMessage.addListener((e) => {
+      clearTimeout(timeout);
+      clients[tabId](e);
+      clients.delete(tabId);
+      port.disconnect();
+    });
 
-  port.postMessage(events[tabId]);
-  events.delete(tabId);
+    port.postMessage(events[tabId]);
+    events.delete(tabId);
+  }
 });
